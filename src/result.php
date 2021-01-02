@@ -22,7 +22,8 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
 
   # 課税所得金額 算出
   $tx = new Tax();
-  $txIncome = $tx->txincomeCalc($thisAmount);
+  $incomeDeduction = $tx->txincomeCalc($thisAmount);
+  $txIncome = $thisAmount - $incomeDeduction;
 }
 ?>
 <html>
@@ -40,8 +41,8 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
     <div class="container">
         <h2>手取り計算ツール</h2>
       <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-4 shadow">
+          <div class="col-md-6">
+            <div class="card mb-2 shadow">
               <div class="card-header">
                 年収総額
               </div>
@@ -51,8 +52,8 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
             </div>
           </div>
 
-          <div class="col-md-4">
-            <div class="card mb-4 shadow">
+          <div class="col-md-6">
+            <div class="card mb-2 shadow">
               <div class="card-header">
                 前年年収総額
               </div>
@@ -62,8 +63,8 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
             </div>
           </div>
 
-          <div class="col-md-4">
-            <div class="card mb-4 shadow">
+          <div class="col-md-6">
+            <div class="card mb-2 shadow">
               <div class="card-header">
                 年齢
               </div>
@@ -73,10 +74,21 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
             </div>
           </div>
 
-          <div class="col-md-4">
-            <div class="card mb-4 shadow">
+          <div class="col-md-6">
+            <div class="card mb-2 shadow">
               <div class="card-header">
-                課税所得金額
+                所得控除額
+              </div>
+              <div class="card-body">
+                <?php if(isset($incomeDeduction)){ echo '¥' . number_format($incomeDeduction); } ?>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card mb-2 shadow">
+              <div class="card-header">
+                課税対象所得
               </div>
               <div class="card-body">
                 <?php if(isset($txIncome)){ echo '¥' . number_format($txIncome); } ?>
