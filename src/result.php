@@ -1,7 +1,7 @@
 <?php
 
 # 税金関連クラス
-require_once('/lib/taxclass.php');
+require_once('lib/taxclass.php');
 
 # 変数初期化
 $thisAmount = 0;
@@ -20,15 +20,9 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
   $lastAmount = intval($lastAmount);
   $age = intval($age);
 
-  # 型の状態を確認
-  print(gettype($thisAmount));
-  print(gettype($lastAmount));
-  print(gettype($age)); 
-
-  # ページへの出力
-  echo '¥' . $thisAmount;
-  echo '¥' . $lastAmount;
-  echo $age . '歳';
+  # 課税所得金額 算出
+  $tx = new Tax();
+  $txIncome = $tx->txincomeCalc($thisAmount);
 }
 ?>
 <html>
@@ -62,7 +56,7 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
 
             <label for="taxableIncome">課税所得</label>
             <div class="input-group mb-3">
-              <input type="text" readonly class="form-control-plaintext" value="<?php if(isset($taxableIncom)){ echo '¥' . $taxableIncome; } ?>">
+              <input type="text" readonly class="form-control-plaintext" value="<?php if(isset($txIncome)){ echo '¥' . $txIncome; } ?>">
             </div>
       </div>
     </main>
