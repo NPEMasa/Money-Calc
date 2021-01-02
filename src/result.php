@@ -41,12 +41,12 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
         <h2>手取り計算ツール</h2>
             <label for="basic-addon1">年収総額(Annual Amount)</label>
             <div class="input-group mb-3">
-              <input type="text" readonly class="form-control-plaintext" value="<?php if(isset($thisAmount)){ echo '¥' . $thisAmount; } ?>">
+              <input type="text" readonly class="form-control-plaintext" value="<?php if(isset($thisAmount)){ echo '¥' . number_format($thisAmount); } ?>">
             </div>
 
             <label for="basic-addon2">前年年収総額(Last Year Annual Amount)</label>
             <div class="input-group mb-3">
-              <input type="text" readonly class="form-control-plaintext" value="<?php if(isset($lastAmount)){ echo '¥' . $lastAmount; } ?>">
+              <input type="text" readonly class="form-control-plaintext" value="<?php if(isset($lastAmount)){ echo '¥' . number_format($lastAmount); } ?>">
             </div>
 
             <label for="basic-addon1">年齢(Age)</label>
@@ -56,7 +56,7 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
 
             <label for="taxableIncome">課税所得</label>
             <div class="input-group mb-3">
-              <input type="text" readonly class="form-control-plaintext" value="<?php if(isset($txIncome)){ echo '¥' . $txIncome; } ?>">
+              <input type="text" readonly class="form-control-plaintext" value="<?php if(isset($txIncome)){ echo '¥' . number_format($txIncome); } ?>">
             </div>
       </div>
     </main>
