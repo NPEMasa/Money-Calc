@@ -30,36 +30,62 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
 
     <title> Total Income Calc Tool </title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
   </head>
   <body>
 
-    <main role="main" class="container">
-      <div class="content">
+  <main role="main">
+    <div class="container">
         <h2>手取り計算ツール</h2>
-            <label for="basic-addon1">年収総額(Annual Amount)</label>
-            <div class="input-group mb-3">
-              <input type="text" readonly class="form-control-plaintext" value="<?php if(isset($thisAmount)){ echo '¥' . number_format($thisAmount); } ?>">
+      <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4 shadow">
+              <div class="card-header">
+                年収総額
+              </div>
+              <div class="card-body">
+                <?php if(isset($thisAmount)){ echo '¥' . number_format($thisAmount); } ?>
+              </div>
             </div>
+          </div>
 
-            <label for="basic-addon2">前年年収総額(Last Year Annual Amount)</label>
-            <div class="input-group mb-3">
-              <input type="text" readonly class="form-control-plaintext" value="<?php if(isset($lastAmount)){ echo '¥' . number_format($lastAmount); } ?>">
+          <div class="col-md-4">
+            <div class="card mb-4 shadow">
+              <div class="card-header">
+                前年年収総額
+              </div>
+              <div class="card-body">
+                <?php if(isset($lastAmount)){ echo '¥' . number_format($lastAmount); } ?>
+              </div>
             </div>
+          </div>
 
-            <label for="basic-addon1">年齢(Age)</label>
-            <div class="input-group mb-3">
-              <input type="text" readonly class="form-control-plaintext" value="<?php if(isset($age)){ echo $age . '歳'; } ?>">
+          <div class="col-md-4">
+            <div class="card mb-4 shadow">
+              <div class="card-header">
+                年齢
+              </div>
+              <div class="card-body">
+                <?php if(isset($age)){ echo $age . '歳'; } ?>
+              </div>
             </div>
+          </div>
 
-            <label for="taxableIncome">課税所得</label>
-            <div class="input-group mb-3">
-              <input type="text" readonly class="form-control-plaintext" value="<?php if(isset($txIncome)){ echo '¥' . number_format($txIncome); } ?>">
+          <div class="col-md-4">
+            <div class="card mb-4 shadow">
+              <div class="card-header">
+                課税所得金額
+              </div>
+              <div class="card-body">
+                <?php if(isset($txIncome)){ echo '¥' . number_format($txIncome); } ?>
+              </div>
             </div>
+          </div>
       </div>
-    </main>
+    </div>
+  </main>
 
     <script src="js/jquery-3.5.1.slim.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
