@@ -1,5 +1,8 @@
 <?php
 
+# 税金関連クラス
+require_once('/lib/taxclass.php');
+
 # 変数初期化
 $thisAmount = 0;
 $lastAmount = 0;
@@ -44,17 +47,22 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
         <h2>手取り計算ツール</h2>
             <label for="basic-addon1">年収総額(Annual Amount)</label>
             <div class="input-group mb-3">
-              <input type="text" readonly class="form-control-plaintext" value="<?php echo '¥' . $thisAmount; ?>">
+              <input type="text" readonly class="form-control-plaintext" value="<?php if(isset($thisAmount)){ echo '¥' . $thisAmount; } ?>">
             </div>
 
             <label for="basic-addon2">前年年収総額(Last Year Annual Amount)</label>
             <div class="input-group mb-3">
-              <input type="text" readonly class="form-control-plaintext" value="<?php echo '¥' . $lastAmount; ?>">
+              <input type="text" readonly class="form-control-plaintext" value="<?php if(isset($lastAmount)){ echo '¥' . $lastAmount; } ?>">
             </div>
 
             <label for="basic-addon1">年齢(Age)</label>
             <div class="input-group mb-3">
-              <input type="text" readonly class="form-control-plaintext" value="<?php echo $age . '歳'; ?>">
+              <input type="text" readonly class="form-control-plaintext" value="<?php if(isset($age)){ echo $age . '歳'; } ?>">
+            </div>
+
+            <label for="taxableIncome">課税所得</label>
+            <div class="input-group mb-3">
+              <input type="text" readonly class="form-control-plaintext" value="<?php if(isset($taxableIncom)){ echo '¥' . $taxableIncome; } ?>">
             </div>
       </div>
     </main>
