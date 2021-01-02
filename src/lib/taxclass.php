@@ -33,6 +33,39 @@ class Tax {
         }
     }
 
+    ## 所得税計算用関数 ##
+    # 引数：課税所得金額
+    public function incometaxCalc($txIncome) {
+        $incomeTax = 0;
+        if($txIncome < 1950000){
+            $incomeTax = $txIncome * 0.05;
+            return $incomeTax;
+
+        }elseif($txIncome < 3300000 && $txIncome >= 1950000){
+            $incomeTax = $txIncome * 0.1 + 97500;
+            return $incomeTax;
+
+        }elseif($txIncome < 6950000 && $txIncome >= 3300000){
+            $incomeTax = $txIncome * 0.2 + 427500;
+            return $incomeTax;
+
+        }elseif($txIncome < 9000000 && $txIncome >= 6950000){
+            $incomeTax = $txIncome * 0.23 + 636000;
+            return $incomeTax;
+
+        }elseif($txIncome < 18000000 && $txIncome >= 9000000){
+            $incomeTax = $txIncome * 0.33 + 1536000;
+            return $incomeTax;
+
+        }elseif($txIncome < 40000000 && $txIncome >= 18000000){
+            $incomeTax = $txIncome * 0.4 + 2796000;
+            return $incomeTax;
+
+        }elseif($txIncome >= 40000000){
+            $incomeTax = $txIncome * 0.45 + 4796000;
+        }
+    }
+
     ## 住民税計算用関数 ##
     # 引数：前年の課税所得
     # 税率：10％固定
