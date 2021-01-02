@@ -39,47 +39,25 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
   </head>
   <body>
 
-
     <main role="main" class="container">
-
       <div class="content">
-
-      <h2>手取り計算ツール</h2>
-
-        <form action="#" method="post">
-
+        <h2>手取り計算ツール</h2>
             <label for="basic-addon1">年収総額(Annual Amount)</label>
             <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">¥</span>
-              </div>
-              <input type="text" readonly class="form-control-plaintext" placeholder="3000000">
+              <input type="text" readonly class="form-control-plaintext" value="<?php echo '¥' . $thisAmount; ?>">
             </div>
 
             <label for="basic-addon2">前年年収総額(Last Year Annual Amount)</label>
             <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon2">¥</span>
-              </div>
               <input type="text" readonly class="form-control-plaintext" value="<?php echo '¥' . $lastAmount; ?>">
             </div>
 
             <label for="basic-addon1">年齢(Age)</label>
             <div class="input-group mb-3">
-              <input type="text" readonly class="form-control-plaintext" placeholder="35">
-              <div class="input-group-append">
-                <span class="input-group-text">歳</span>
-              </div>
+              <input type="text" readonly class="form-control-plaintext" value="<?php echo $age . '歳'; ?>">
             </div>
-            <br>
-            
-              <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-
       </div>
-
     </main>
-
 
     <script src="js/jquery-3.5.1.slim.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
