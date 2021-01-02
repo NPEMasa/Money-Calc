@@ -12,47 +12,47 @@
   <body>
 
 
-    <main role="main" class="container">
+    <main role="main">
+      <div class="container">
+        <h2>手取り計算ツール</h2>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card mb-12 shadow">
+              <form action="/result.php" method="post">
+                <div class="form-group m-3">
 
-      <div class="content">
+                  <label for="basic-addon1" >年収総額(Annual Amount)</label>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">¥</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="3000000" name="thisAmount">
+                  </div>
 
-      <h2>手取り計算ツール</h2>
+                  <label for="basic-addon2">前年年収総額(Last Year Annual Amount)</label>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2">¥</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="2500000" name="lastAmount">
+                  </div>
 
-        <form action="/result.php" method="post">
-          <div class="form-group row">
+                  <label for="basic-addon1">年齢(Age)</label>
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="35" name="age">
+                    <div class="input-group-append">
+                        <span class="input-group-text">歳</span>
+                    </div>
+                  </div>
+                    
+                    <button type="submit" class="btn btn-primary">計算</button>
 
-            <label for="basic-addon1" class="col-sm-4 col-form-label">年収総額(Annual Amount)</label>
-            <div class="input-group mb-3 col-sm-8">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">¥</span>
-              </div>
-              <input type="text" class="form-control" placeholder="3000000" name="thisAmount">
+                </div>
+              </form>
             </div>
-
-            <label for="basic-addon2" class="col-sm-4 col-form-label">前年年収総額(Last Year Annual Amount)</label>
-            <div class="input-group mb-3 col-sm-8">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon2">¥</span>
-              </div>
-              <input type="text" class="form-control" placeholder="2500000" name="lastAmount">
-            </div>
-
-            <label for="basic-addon1" class="col-sm-4 col-form-label">年齢(Age)</label>
-            <div class="input-group mb-3 col-sm-8">
-              <input type="text" class="form-control" placeholder="35" name="age">
-              <div class="input-group-append">
-                <span class="input-group-text">歳</span>
-              </div>
-            </div>
-            <br>
-            
-              <button type="submit" class="btn btn-primary">計算</button>
-
           </div>
-        </form>
-
+        </div>
       </div>
-
     </main>
 
 
