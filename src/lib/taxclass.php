@@ -249,7 +249,7 @@ class Tax {
             }else{
                 $hInsurance = 20233;
             }
-        }elseif($montyhlyReward >= 425000 && $monthlyReward < 455000){
+        }elseif($monthlyReward >= 425000 && $monthlyReward < 455000){
             if($age >= 40 && $age < 65){
                 $hInsurance = 25652;
             }else{
@@ -305,7 +305,73 @@ class Tax {
     ## 厚生年金保険計算関数 ##
     # 引数：月額報酬、年齢
     # 料率：「令和2年9月分からの健康保険・厚生年金保険の保険料額表」を参照
-    public function wpinsuranceCalc($monthlyReward, $age) {
-
+    public function wpinsuranceCalc($monthlyReward) {
+        $wpInsurance = 0;
+        if($monthlyReward < 93000){
+            $wpInsurance = 8052;
+        }elseif($monthlyReward >= 93000 && $monthlyReward < 101000){
+            $wpInsurance = 8967;
+        }elseif($monthlyReward >= 101000 && $monthlyReward < 107000){
+            $wpInsurance = 9516;
+        }elseif($monthlyReward >= 107000 && $monthlyReward < 114000){
+            $wpInsurance = 10065;
+        }elseif($monthlyReward >= 114000 && $monthlyReward < 122000){
+            $wpInsurance = 10797;
+        }elseif($monthlyReward >= 122000 && $monthlyReward < 130000){
+            $wpInsurance = 11529;
+        }elseif($monthlyReward >= 130000 && $monthlyReward < 138000){
+            $wpInsurance = 12261;
+        }elseif($monthlyReward >= 138000 && $monthlyReward < 146000){
+            $wpInsurance = 12993;
+        }elseif($monthlyReward >= 146000 && $monthlyReward < 155000){
+            $wpInsurance = 13725;
+        }elseif($monthlyReward >= 155000 && $monthlyReward < 165000){
+            $wpInsurance = 14640;
+        }elseif($monthlyReward >= 165000 && $monthlyReward < 175000){
+            $wpInsurance = 15555;
+        }elseif($monthlyReward >= 175000 && $monthlyReward < 185000){
+            $wpInsurance = 16470;
+        }elseif($monthlyReward >= 185000 && $monthlyReward < 195000){
+            $wpInsurance = 17385;
+        }elseif($monthlyReward >= 195000 && $monthlyReward < 210000){
+            $wpInsurance = 18300;
+        }elseif($monthlyReward >= 210000 && $monthlyReward < 230000){
+            $wpInsurance = 20130;
+        }elseif($monthlyReward >= 230000 && $monthlyReward < 250000){
+            $wpInsurance = 21960;
+        }elseif($monthlyReward >= 250000 && $monthlyReward < 270000){
+            $wpInsurance = 23790;
+        }elseif($monthlyReward >= 270000 && $monthlyReward < 290000){
+            $wpInsurance = 25620;
+        }elseif($monthlyReward >= 290000 && $monthlyReward < 310000){
+            $wpInsurance = 27450;
+        }elseif($monthlyReward >= 310000 && $monthlyReward < 330000){
+            $wpInsurance = 29280;
+        }elseif($monthlyReward >= 330000 && $monthlyReward < 350000){
+            $wpInsurance = 31110;
+        }elseif($monthlyReward >= 350000 && $monthlyReward < 370000){
+            $wpInsurance = 32940;
+        }elseif($monthlyReward >= 370000 && $monthlyReward < 395000){
+            $wpInsurance = 34770;
+        }elseif($monthlyReward >= 395000 && $monthlyReward < 425000){
+            $wpInsurance = 37515;
+        }elseif($monthlyReward >= 425000 && $monthlyReward < 455000){
+            $wpInsurance = 40260;
+        }elseif($monthlyReward >= 455000 && $monthlyReward < 485000){
+            $wpInsurance = 43005;
+        }elseif($monthlyReward >= 485000 && $monthlyReward < 515000){
+            $wpInsurance = 45750;
+        }elseif($monthlyReward >= 515000 && $monthlyReward < 545000){
+            $wpInsurance = 48495;
+        }elseif($monthlyReward >= 545000 && $monthlyReward < 575000){
+            $wpInsurance = 51240;
+        }elseif($monthlyReward >= 575000 && $monthlyReward < 605000){
+            $wpInsurance = 53985;
+        }elseif($monthlyReward >= 605000 && $monthlyReward < 635000){
+            $wpInsurance = 56730;
+        }elseif($monthlyReward >= 635000){
+            $wpInsurance = 59475;
+        }
+        return $hInsurance;
     }
 }
