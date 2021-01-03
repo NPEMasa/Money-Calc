@@ -32,9 +32,13 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
   $incomeTax = $tx->incometaxCalc($txIncome);
 
   # 住民税 算出
-  $lyincomeDeduction = $tx->txincomeCalc($lastAmount);
-  $lytxIncome = $lastAmount - $lyincomeDeduction;
-  $residentTax = $tx->rtxCalc($lytxIncome);
+  if($lastAmount == 0){
+    $residentTax = 0;
+  }else{
+    $lyincomeDeduction = $tx->txincomeCalc($lastAmount);
+    $lytxIncome = $lastAmount - $lyincomeDeduction;
+    $residentTax = $tx->rtxCalc($lytxIncome);
+  }
 
   # 雇用保険料 算出
   $monthlyAmount = round($thisAmount / 12);
