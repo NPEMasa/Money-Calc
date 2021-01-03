@@ -30,6 +30,10 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
   $lyincomeDeduction = $tx->txincomeCalc($lastAmount);
   $lytxIncome = $lastAmount - $lyincomeDeduction;
   $residentTax = $tx->rtxCalc($lytxIncome);
+
+  # 介護保険料 算出
+  $monthlyAmount = round($thisAmount / 12);
+  $eInsurance = $tx->employinsuranceCalc($monthlyAmount);
 }
 ?>
 <html>
@@ -109,6 +113,28 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
               </div>
               <div class="card-body">
                 <?php if(isset($residentTax)){ echo '¥' . number_format($residentTax); } ?>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card mb-2 shadow">
+              <div class="card-header">
+                給与支給額(月額)
+              </div>
+              <div class="card-body">
+                <?php if(isset($monthlyAmount)){ echo '¥' . number_format($monthlyAmount); } ?>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card mb-2 shadow">
+              <div class="card-header">
+                介護保険料(月額)
+              </div>
+              <div class="card-body">
+                <?php if(isset($eInsurance)){ echo '¥' . number_format($eInsurance); } ?>
               </div>
             </div>
           </div>
