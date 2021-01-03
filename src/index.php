@@ -21,28 +21,41 @@
               <form action="/result.php" method="post">
                 <div class="form-group m-3">
 
-                  <label for="basic-addon1" >年収総額(Annual Amount)</label>
+                  <label for="this-amount" >年収総額(Annual Amount)</label>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">¥</span>
+                        <span class="input-group-text" id="this-amount">¥</span>
                     </div>
                     <input type="text" class="form-control" placeholder="3000000" name="thisAmount">
                   </div>
 
-                  <label for="basic-addon2">前年年収総額(Last Year Annual Amount)</label>
+                  <label for="last-amount">前年年収総額(Last Year Annual Amount)</label>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon2">¥</span>
+                        <span class="input-group-text" id="last-amount">¥</span>
                     </div>
                     <input type="text" class="form-control" placeholder="2500000" name="lastAmount">
                   </div>
 
-                  <label for="basic-addon1">年齢(Age)</label>
+                  <label for="age">年齢(Age)</label>
                   <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="35" name="age">
                     <div class="input-group-append">
-                        <span class="input-group-text">歳</span>
+                        <span class="input-group-text" id="age">歳</span>
                     </div>
+                  </div>
+                    
+                  <div class="form-check mb-3">
+                    <input type="radio" class="form-check-input" name="insuranceFlag" id="wpInsurance" value="0" checked>
+                    <label class="form-check-label" for="wpInsurance">
+                      厚生年金保険
+                    </label>
+                  </div>
+                  <div class="form-check mb-3">
+                    <input type="radio" class="form-check-input" name="insuranceFlag" id="healthInsurance" value="1">
+                    <label class="form-check-label" for="healthInsurance">
+                      健康保険
+                    </label>
                   </div>
                     
                     <button type="submit" class="btn btn-primary">計算</button>
