@@ -129,17 +129,6 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
           <div class="col-md-6">
             <div class="card mb-2 shadow">
               <div class="card-header">
-                課税対象所得
-              </div>
-              <div class="card-body">
-                <?php if(isset($txIncome)){ echo '¥' . number_format($txIncome); } ?>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="card mb-2 shadow">
-              <div class="card-header">
                 所得税
               </div>
               <div class="card-body">
@@ -155,28 +144,6 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
               </div>
               <div class="card-body">
                 <?php if(isset($residentTax)){ echo '¥' . number_format($residentTax); } ?>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="card mb-2 shadow">
-              <div class="card-header">
-                給与支給額(月額)
-              </div>
-              <div class="card-body">
-                <?php if(isset($monthlyAmount)){ echo '¥' . number_format($monthlyAmount); } ?>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="card mb-2 shadow">
-              <div class="card-header">
-                介護保険料(月額)
-              </div>
-              <div class="card-body">
-                <?php if(isset($eInsurance)){ echo '¥' . number_format($eInsurance); } ?>
               </div>
             </div>
           </div>
