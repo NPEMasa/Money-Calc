@@ -7,6 +7,7 @@ require_once('lib/taxclass.php');
 $thisAmount = 0;
 $lastAmount = 0;
 $age = 0;
+$residentTax = 0;
 
 if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['age'])){
 
@@ -24,6 +25,10 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
   $tx = new Tax();
   $incomeDeduction = $tx->txincomeCalc($thisAmount);
   $txIncome = $thisAmount - $incomeDeduction;
+
+  # 住民税 算出
+  $lytxIncome = $tx->txincomeCalc($lastAmount);
+  $residentTax = $tx->rtxCalc($lytxIncome);
 }
 ?>
 <html>
