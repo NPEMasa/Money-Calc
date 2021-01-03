@@ -27,7 +27,8 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
   $txIncome = $thisAmount - $incomeDeduction;
 
   # 住民税 算出
-  $lytxIncome = $tx->txincomeCalc($lastAmount);
+  $lyincomeDeduction = $tx->txincomeCalc($lastAmount);
+  $lytxIncome = $lastAmount - $lyincomeDeduction;
   $residentTax = $tx->rtxCalc($lytxIncome);
 }
 ?>
@@ -100,6 +101,18 @@ if(isset($_POST['thisAmount']) && isset($_POST['lastAmount']) && isset($_POST['a
               </div>
             </div>
           </div>
+
+          <div class="col-md-6">
+            <div class="card mb-2 shadow">
+              <div class="card-header">
+                住民税
+              </div>
+              <div class="card-body">
+                <?php if(isset($residentTax)){ echo '¥' . number_format($residentTax); } ?>
+              </div>
+            </div>
+          </div>
+
       </div>
     </div>
   </main>
