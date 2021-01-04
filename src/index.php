@@ -26,7 +26,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="this-amount">¥</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="3000000" name="thisAmount">
+                    <input type="tel" class="form-control" placeholder="3000000" name="thisAmount">
                   </div>
 
                   <label for="last-amount">前年年収総額(Last Year Annual Amount)</label>
@@ -34,12 +34,12 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="last-amount">¥</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="2500000" name="lastAmount">
+                    <input type="tel" class="form-control" placeholder="2500000" name="lastAmount">
                   </div>
 
                   <label for="age">年齢(Age)</label>
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="35" name="age">
+                    <input type="tel" class="form-control" placeholder="35" name="age">
                     <div class="input-group-append">
                         <span class="input-group-text" id="age">歳</span>
                     </div>
